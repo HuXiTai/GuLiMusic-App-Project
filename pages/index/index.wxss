@@ -1,0 +1,116 @@
+.indexContainer {
+  height: 100%;
+}
+
+/* swiper组件有一个默认的高度150px，图片设置大了超出部分隐藏 */
+.indexContainer .bannerSwiper {
+  width: 100%;
+  height: 300rpx;
+}
+
+.indexContainer .bannerSwiper .bannerItem {
+  width: 100%;
+  height: 300rpx;
+}
+
+.indexContainer .bannerSwiper .bannerItem .bannerImg {
+  width: 100%;
+  height: 300rpx;
+}
+
+.indexContainer .navList {
+  width: 100%;
+  display: flex;
+}
+
+.indexContainer .navList .navItem {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.indexContainer .navList .navItem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #FF0906;
+  color: #fff;
+  border-radius: 50%;
+  margin: 30rpx 0 20rpx 0;
+  font-size: 50rpx;
+}
+
+.indexContainer .navList .navItem .navText {
+  font-size: 26rpx;
+}
+
+.indexContainer .recommend {
+  padding: 24rpx;
+}
+
+
+
+.indexContainer .recommend {
+  height: 430rpx;
+}
+
+.indexContainer .recommend .scrollList {
+  display: flex;
+}
+
+
+.indexContainer .recommend .scrollList .scrollItem .itemImg {
+  margin: 20rpx 20rpx 0 0;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+
+.indexContainer .recommend .scrollList .scrollItem .itemText {
+  width: 200rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 26rpx;
+}
+
+.indexContainer .recommend .rankSwiperList {
+  height: 400rpx;
+  margin-top: 20rpx;
+}
+
+.indexContainer .recommend .rankSwiperList .rankSwiperItem {
+  height: 400rpx;
+}
+
+.indexContainer .recommend .rankSwiperList .rankSwiperItem .main {
+  padding: 20rpx;
+  width: 90%;
+  height: 360rpx;
+  background-color: #aaa;
+  margin: 0 auto;
+  border-radius: 10rpx;
+}
+
+.indexContainer .recommend .rankSwiperList .rankSwiperItem .main .title {
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.indexContainer .recommend .rankSwiperList .rankSwiperItem .main .mainItem .mainImg {
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+  margin-bottom: 5rpx;
+}
+
+
+.indexContainer .recommend .rankSwiperList .rankSwiperItem .main .mainItem .mainText .mainIndex {
+  margin: 0 50rpx;
+}

@@ -1,0 +1,18 @@
+.header {
+  color: #aaa;
+  line-height: 100rpx;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body .lookText {
+  text-align: center;
+  border: 1px solid #999;
+  width: 150rpx;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+}

@@ -1,0 +1,5 @@
+<view class="header">{{title}}</view>
+<view class="body">
+  <text class="recommendText">{{content}}</text>
+  <text class="lookText">查看更多</text>
+</view>
