@@ -11,6 +11,13 @@ Page({
     tapList: []
   },
 
+  //点击今日推荐
+  clickRecommend() {
+    wx.navigateTo({
+      url: '/pages/recommend/recommend',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

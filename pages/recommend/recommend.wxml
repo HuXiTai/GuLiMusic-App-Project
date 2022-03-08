@@ -1,0 +1,23 @@
+<view class="RecommendContainer">
+  <view class="header">
+    <image class="bgcImg" src="../../static/images/recommendSong/recommendSong.jpg"></image>
+    <text class="dateText">{{month}}月{{date}}日推荐</text>
+  </view>
+
+  <view class="body">
+    <view class="title">
+      <text>播放全部</text>
+      <text>全选</text>
+    </view>
+    <scroll-view enable-flex scroll-Y class="songList">
+      <view class="songItem" wx:for="{{songList}}" wx:key="id" bindtap="toDetail">
+        <image class="songImg" src="{{item.songImg}}"></image>
+        <view class="songInfo">
+          <text class="songName">{{item.songName}}</text>
+          <text class="songer">{{item.songer}}</text>
+        </view>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -16,7 +16,7 @@
   <!-- 视频列表 -->
   <scroll-view bindscrolltolower="handlerScrolltolower" bindrefresherrefresh="handlerRefresh" scroll-Y enable-flex
     class="videoList" refresher-enabled refresher-triggered="{{isRefresh}}">
-    <view class="videoItem" wx:for="{{videoList}}">
+    <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
       <video bindtimeupdate="handlerTimeupdate" wx:if="{{vid === item.vid}}" src="{{item.urlInfo.url}}"
         id="{{item.vid}}" class="video" bindtap="playOrPause"></video>
       <image bindended="handlerEnded" bindtap="playOrPause" id="{{item.vid}}" wx:else class="videoImg"

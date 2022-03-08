@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/recommend/recommend",
     "pages/video/video",
     "pages/center/center",
     "pages/login/login",
-    "pages/index/index"
+    "pages/songDetails/songDetails"
+
 
   ],
   "window": {

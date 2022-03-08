@@ -1,0 +1,139 @@
+.songContainer {
+  height: 100%;
+  width: 100%;
+  background-color: #7a7a7a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songContainer .title {
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.songContainer .needle {
+  z-index: 999;
+  width: 210rpx;
+  height: 350rpx;
+  top: 36rpx;
+  left: 74rpx;
+  position: relative;
+  transform-origin: 30rpx 30rpx;
+  transform: rotate(-30deg);
+  transition: .5s linear;
+}
+
+.songContainer .needle.active {
+  transform: rotate(-5deg);
+}
+
+.songContainer .needle .needleImg {
+
+  position: absolute;
+
+  width: 210rpx;
+  height: 350rpx;
+}
+
+.songContainer .disc {
+  width: 600rpx;
+  height: 600rpx;
+  position: relative;
+  top: -170rpx;
+  animation: disc 10s linear infinite;
+  animation-play-state: paused
+}
+
+.songContainer .disc.active {
+  animation-play-state: running
+}
+
+
+@keyframes disc {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.songContainer .disc .discImg {
+  width: 600rpx;
+  height: 600rpx;
+  position: absolute;
+}
+
+.songContainer .disc .songImg {
+
+  width: 360rpx;
+  height: 360rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* 底部控制区域 */
+.musicControl {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1rpx solid #fff;
+  width: 100%;
+  display: flex;
+
+}
+
+.musicControl text {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+}
+
+.musicControl text.big {
+  font-size: 80rpx;
+}
+
+
+
+.progress {
+  width: 650rpx;
+  display: flex;
+  align-items: center;
+}
+
+.progress .progressBar {
+  position: relative;
+  width: 450rpx;
+  height: 4rpx;
+  background-color: white;
+  margin: 0 20rpx;
+}
+
+.progress .progressBar .currentBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 4rpx;
+  background-color: red;
+}
+
+.progress .progressBar .currentBar .circle {
+  position: absolute;
+  right: -10rpx;
+  top: -8rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: lawngreen;
+}
