@@ -1,29 +1,59 @@
 // pages/center/center.js
-const start
-
+let startY = 0
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    moveY: "",
+    transition: "",
+    userInfo: {},
+    recordInfo: {}
   },
 
   //手指按下时调用
-  handlertouchstart(e) {
-    start = e.change.client
+  handlerStart(e) {
+    this.setData({
+      transition: ""
+    })
+    //获取鼠标开始位置
+    startY = e.changedTouches[0].clientY
   },
   //手指移动时调用
-  handlertouchmove(e) { },
+  handlerMove(e) {
+    this.setData({
+      moveY: (e.changedTouches[0].clientY - startY) * 2 < 0 ? 0 + "rpx" : (e.changedTouches[0].clientY - startY) * 2 + "rpx"
+    })
+
+  },
   //手指结束移动时调用
-  handlertouchend(e) { },
+  handlerEnd(e) {
+    this.setData({
+      moveY: 0,
+      transition: "all 1s"
+    })
+  },
+
+  //点击登录时
+  toLogin(e) {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo_key')
+    })
 
+    this.setData({
+      recordInfo: wx.getStorageSync('recordInfo_key')
+    })
   },
 
   /**

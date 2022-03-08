@@ -1,2 +1,45 @@
-<!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="videoContainer">
+  <!-- 搜索头 -->
+  <view class="header">
+    <image class="videoImg" src="../../static/images/video/video.jpg"></image>
+    <text class="videoSearch">搜索音乐</text>
+    <image class="videoImg" src="../../static/images/logo.png"></image>
+  </view>
+
+  <!-- 视频导航 -->
+  <scroll-view scroll-X enable-flex class="videoNavList">
+    <view id="{{item.id}}" bindtap="clickNav" class="videoNavItem {{navId === item.id && 'active'}}"
+      wx:for="{{navList}}" wx:key="id">
+      {{item.name}}</view>
+  </scroll-view>
+
+  <!-- 视频列表 -->
+  <scroll-view bindscrolltolower="handlerScrolltolower" bindrefresherrefresh="handlerRefresh" scroll-Y enable-flex
+    class="videoList" refresher-enabled refresher-triggered="{{isRefresh}}">
+    <view class="videoItem" wx:for="{{videoList}}">
+      <video bindtimeupdate="handlerTimeupdate" wx:if="{{vid === item.vid}}" src="{{item.urlInfo.url}}"
+        id="{{item.vid}}" class="video" bindtap="playOrPause"></video>
+      <image bindended="handlerEnded" bindtap="playOrPause" id="{{item.vid}}" wx:else class="videoImg"
+        src="{{item.coverUrl}}"></image>
+
+      <view class="content">{{item.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">{{item.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">{{item.commentCount}}</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

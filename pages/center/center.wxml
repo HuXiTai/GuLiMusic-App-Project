@@ -12,7 +12,7 @@
 
     <view wx:else class="user-info-box">
       <view class="portrait-box" bindtap="toLogin">
-        <image class="portrait" src='../../static/images/mylove.jpg'></image>
+        <image class="portrait" bindclick="toLogin" src='../../static/images/mylove.jpg'></image>
       </view>
       <view class="info-box">
         <text class="username">游客</text>
@@ -35,8 +35,8 @@
   </view>
 
 
-  <view class="cover-container" bindtouchstart="handlertouchstart" bindtouchmove="handlertouchmove"
-    bindtouchend="handlertouchend">
+  <view class="cover-container" style="transform:translateY({{moveY}});transition:{{transition}}"
+    bindtouchstart="handlerStart" bindtouchmove="handlerMove" bindtouchend="handlerEnd">
     <image class="arc" src="/static/images/personal/arc.png"></image>
     <!-- 个人中心导航 -->
     <view class="nav-section">
@@ -63,9 +63,9 @@
       <view class="recentPlayContainer">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
-        <scroll-view wx:if="{{userInfo.nickname}}" class="recordScroll" enable-flex scroll-x>
-          <view wx:for="{{recentList}}" class="item">
-            <image src="{{item.picUrl}}"></image>
+        <scroll-view wx:if="{{userInfo.nickname}}" class="recordList" enable-flex scroll-X>
+          <view class="recordItem" wx:for="{{recordInfo}}" :key="id">
+            <image class="recordImg" src="{{item.imgUrl}}"></image>
           </view>
         </scroll-view>
         <view wx:else style="font-size:28rpx;padding:0 20rpx">暂无记录</view>

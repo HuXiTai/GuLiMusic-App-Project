@@ -12,6 +12,20 @@
   padding: 100rpx 30rpx 0;
 }
 
+.recordList {
+  height: 200rpx;
+  display: flex;
+}
+
+.recordList .recordItem {}
+
+.recordList .recordItem .recordImg {
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+}
+
 .user-section .bg {
   position: absolute;
   left: 0;

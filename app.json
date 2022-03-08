@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/video/video",
     "pages/center/center",
-    "pages/video/video"
+    "pages/login/login",
+    "pages/index/index"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#D43C33",
@@ -29,5 +31,6 @@
         "text": "个人中心"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap34.json"
 }

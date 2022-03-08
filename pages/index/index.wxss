@@ -59,9 +59,14 @@
 }
 
 .indexContainer .recommend .scrollList {
+  height: 230rpx;
+
   display: flex;
 }
 
+.indexContainer .recommend .scrollList .scrollItem {
+  height: 230rpx;
+}
 
 .indexContainer .recommend .scrollList .scrollItem .itemImg {
   margin: 20rpx 20rpx 0 0;
