@@ -1,4 +1,5 @@
 import request from "../../utils/request"
+import pubSub from "pubsub-js"
 Page({
 
   /**
@@ -7,13 +8,18 @@ Page({
   data: {
     date: "",
     month: "",
-    songList: []
+    songList: [],
+    songId: ""
   },
 
   //点击歌曲去往详情
-  toDetail() {
+  toDetail(e) {
+    const songId = e.currentTarget.id
+    this.setData({
+      songId
+    })
     wx.navigateTo({
-      url: '/pages/songDetails/songDetails',
+      url: `/pages/songDetails/songDetails?songId=${songId}`,
     })
   },
 
@@ -37,13 +43,32 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     this.setData({
       date: new Date().getDate(),
       month: new Date().getMonth() + 1
     })
 
-    this.getSongList()
+    await this.getSongList()
+
+
+    //订阅
+    pubSub.subscribe("type", (_, type) => {
+      let { songList, songId } = this.data
+      let nowIndex = songList.findIndex(item => item.id === songId * 1)
+      let newIndex = -1
+      if (type === "prev") {
+        newIndex = nowIndex - 1 < 0 ? songList.length - 1 : nowIndex - 1
+      } else {
+        newIndex = nowIndex + 1 > songList.length - 1 ? 0 : nowIndex + 1
+      }
+      this.setData({
+        songId: songList[newIndex].id
+      })
+
+      //发布上一曲或下一曲的ID
+      pubSub.publish("newId", this.data.songId)
+    })
   },
 
   /**

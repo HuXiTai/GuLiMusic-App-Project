@@ -1,0 +1,22 @@
+{
+  "name": "gulimusic-app-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuXiTai/GuLiMusic-App-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuXiTai/GuLiMusic-App-Project/issues"
+  },
+  "homepage": "https://github.com/HuXiTai/GuLiMusic-App-Project#readme",
+  "dependencies": {
+    "pubsub-js": "^1.9.4"
+  }
+}

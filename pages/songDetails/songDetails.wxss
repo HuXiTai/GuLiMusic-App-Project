@@ -1,10 +1,14 @@
 .songContainer {
   height: 100%;
   width: 100%;
-  background-color: #7a7a7a;
+  /* background-color: #7a7a7a; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(https://tva1.sinaimg.cn/large/007S8ZIlgy1gdx5nyyghzj308m02n0sm.jpg);
+  /* filter: blur(50rpx); */
+  filter: opacity(0.5);
+  filter: grayscale(0.5);
 }
 
 .songContainer .title {

@@ -10,7 +10,7 @@
       <text>全选</text>
     </view>
     <scroll-view enable-flex scroll-Y class="songList">
-      <view class="songItem" wx:for="{{songList}}" wx:key="id" bindtap="toDetail">
+      <view class="songItem" wx:for="{{songList}}" wx:key="id" id="{{item.id}}" bindtap="toDetail">
         <image class="songImg" src="{{item.songImg}}"></image>
         <view class="songInfo">
           <text class="songName">{{item.songName}}</text>

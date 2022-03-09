@@ -35,5 +35,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap34.json"
+  "sitemapLocation": "sitemap34.json",
+  "requiredBackgroundModes": ["audio", "location"]
 }

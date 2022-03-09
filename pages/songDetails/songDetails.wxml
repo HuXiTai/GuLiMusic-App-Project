@@ -1,11 +1,11 @@
 <view class="songContainer">
-  <text class="title">发光弹</text>
+  <text class="title">{{songInfo.songName}}</text>
   <view class="needle {{isPlay&&'active'}}">
     <image class="needleImg" src="../../static/images/song/needle1.png"></image>
   </view>
   <view class="disc {{isPlay&&'active'}}">
     <image class="discImg" src="../../static/images/song/disc.png"></image>
-    <image class="songImg" src="../../static/images/mylove.jpg"></image>
+    <image class="songImg" src="{{songInfo.songImg}}"></image>
   </view>
 
   <!-- 底部控制播放区域 -->
