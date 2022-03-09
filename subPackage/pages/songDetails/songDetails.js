@@ -1,5 +1,6 @@
-import request from "../../utils/request"
+import request from "../../../utils/request"
 import pubSub from "pubsub-js"
+import moment from "moment"
 Page({
 
   /**
@@ -9,8 +10,13 @@ Page({
     isPlay: false,
     songId: "",
     songInfo: {},
-    songUrl: ""
+    songUrl: "",
+    currentTime: "00:00",
+    endTime: "00:00",
+    width: "",
   },
+
+
 
   //播放或暂停音乐函数
   playOrPauseMusic() {
@@ -61,6 +67,25 @@ Page({
       })
     })
 
+    //监听视频的播放事件
+    this.player.onTimeUpdate(() => {
+      let currentTime = moment(this.player.currentTime * 1000).format("mm:ss")
+      let endTime = moment(this.player.duration * 1000).format("mm:ss")
+      // width / 450 = 当前时间 / 总时间
+      let width = this.player.currentTime / this.player.duration * 450 + "rpx"
+
+      this.setData({
+        currentTime,
+        endTime,
+        width
+      })
+    })
+
+    //音乐播放完自动下一曲
+    this.player.onEnded(() => {
+      pubSub.publish("type", "next")
+    })
+
     //订阅下一曲或上一曲的ID
     pubSub.subscribe("newId", async (_, newId) => {
       this.setData({
@@ -76,6 +101,9 @@ Page({
     })
 
   },
+
+
+
 
   //获取歌曲详情的信息
   async getSongInfo() {

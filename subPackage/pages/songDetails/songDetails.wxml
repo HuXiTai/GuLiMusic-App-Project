@@ -1,11 +1,25 @@
 <view class="songContainer">
   <text class="title">{{songInfo.songName}}</text>
   <view class="needle {{isPlay&&'active'}}">
-    <image class="needleImg" src="../../static/images/song/needle1.png"></image>
+    <image class="needleImg" src="../../../static/images/song/needle1.png"></image>
   </view>
   <view class="disc {{isPlay&&'active'}}">
-    <image class="discImg" src="../../static/images/song/disc.png"></image>
+    <image class="discImg" src="../../../static/images/song/disc.png"></image>
     <image class="songImg" src="{{songInfo.songImg}}"></image>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress">
+    <view class="currentTime">{{currentTime}}</view>
+
+    <view class="progressBar">
+      <view class="currentBar" style="width:{{width}}">
+        <view class="circle">
+        </view>
+      </view>
+    </view>
+    
+    <view class="endTime">{{endTime}}</view>
   </view>
 
   <!-- 底部控制播放区域 -->
@@ -22,3 +36,5 @@
   </view>
 
 </view>
+
+<view class="bgi" style="background-image: url({{songInfo.songImg}})"></view>

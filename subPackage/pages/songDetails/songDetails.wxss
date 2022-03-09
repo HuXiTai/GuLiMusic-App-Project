@@ -1,14 +1,27 @@
+@import "/static/iconfont/iconfont.wxss";
+
+page {
+  height: 100%;
+}
+
 .songContainer {
   height: 100%;
   width: 100%;
-  /* background-color: #7a7a7a; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(https://tva1.sinaimg.cn/large/007S8ZIlgy1gdx5nyyghzj308m02n0sm.jpg);
-  /* filter: blur(50rpx); */
-  filter: opacity(0.5);
-  filter: grayscale(0.5);
+  position: relative;
+  z-index: 888;
+}
+
+.bgi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: contain;
+  filter: blur(50rpx);
+  height: 100%;
+  width: 100%;
 }
 
 .songContainer .title {
@@ -107,37 +120,43 @@
   font-size: 80rpx;
 }
 
-
-
-.progress {
-  width: 650rpx;
+.songContainer .progress {
   display: flex;
   align-items: center;
 }
 
-.progress .progressBar {
+.songContainer .progress .currentTime {
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.songContainer .progress .progressBar {
   position: relative;
   width: 450rpx;
   height: 4rpx;
-  background-color: white;
+  background-color: #fff;
   margin: 0 20rpx;
+
 }
 
-.progress .progressBar .currentBar {
+.songContainer .progress .progressBar .currentBar {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
   height: 4rpx;
-  background-color: red;
+  background-color: #d43c33;
+
 }
 
-.progress .progressBar .currentBar .circle {
+.songContainer .progress .progressBar .currentBar .circle {
   position: absolute;
-  right: -10rpx;
   top: -8rpx;
+  right: -10rpx;
   width: 20rpx;
   height: 20rpx;
+  background-color: #fff;
   border-radius: 50%;
-  background-color: lawngreen;
+}
+
+.songContainer .progress .endTime {
+  font-size: 26rpx;
+  color: #fff;
 }

@@ -1,3 +1,9 @@
+@import "/static/iconfont/iconfont.wxss";
+
+page {
+  height: 100%;
+}
+
 .RecommendContainer {
   height: 100%;
 }
@@ -66,9 +72,3 @@
   justify-content: space-evenly;
   margin: 0 20rpx;
 }
-
-.RecommendContainer .body .songList .songItem .songInfo .songName {}
-
-.RecommendContainer .body .songList .songItem .songInfo .songer {}
-
-.RecommendContainer .body .songList .songItem .iconfont {}

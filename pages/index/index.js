@@ -14,7 +14,7 @@ Page({
   //点击今日推荐
   clickRecommend() {
     wx.navigateTo({
-      url: '/pages/recommend/recommend',
+      url: '/subPackage/pages/recommend/recommend',
     })
   },
 

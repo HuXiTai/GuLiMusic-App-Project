@@ -1,5 +1,6 @@
-import request from "../../utils/request"
+import request from "../../../utils/request"
 import pubSub from "pubsub-js"
+
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
       songId
     })
     wx.navigateTo({
-      url: `/pages/songDetails/songDetails?songId=${songId}`,
+      url: `/subPackage/pages/songDetails/songDetails?songId=${songId}`,
     })
   },
 

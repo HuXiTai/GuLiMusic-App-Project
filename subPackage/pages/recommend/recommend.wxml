@@ -1,6 +1,6 @@
 <view class="RecommendContainer">
   <view class="header">
-    <image class="bgcImg" src="../../static/images/recommendSong/recommendSong.jpg"></image>
+    <image class="bgcImg" src="../../../static/images/recommendSong/recommendSong.jpg"></image>
     <text class="dateText">{{month}}月{{date}}日推荐</text>
   </view>
 

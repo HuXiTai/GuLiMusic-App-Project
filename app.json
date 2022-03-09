@@ -1,19 +1,31 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/recommend/recommend",
     "pages/video/video",
     "pages/center/center",
-    "pages/login/login",
-    "pages/songDetails/songDetails"
-
-
+    "pages/login/login"
   ],
+
+  "subpackages": [{
+    "root": "subPackage",
+    "name": "huxitai",
+    "pages": ["pages/recommend/recommend", "pages/songDetails/songDetails"],
+    "independent": true
+  }],
+
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["huxitai"]
+    }
+  },
+
   "window": {
     "navigationBarBackgroundColor": "#D43C33",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "网易云音乐"
   },
+
   "tabBar": {
     "list": [{
         "pagePath": "pages/index/index",
